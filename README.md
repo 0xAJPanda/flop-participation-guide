@@ -2,6 +2,8 @@
   <img src="assets/banner.svg" alt="FLOP Devnet Starter Guide" width="100%">
 </p>
 
+# FLOP Devnet Starter Guide
+
 <p align="center">
   <img alt="Beginner friendly" src="https://img.shields.io/badge/beginner-friendly-c7f43b?style=flat-square&labelColor=171717">
   <img alt="No CLI required for wallet guide" src="https://img.shields.io/badge/wallet%20guide-no%20CLI-c7f43b?style=flat-square&labelColor=171717">
@@ -9,44 +11,46 @@
 </p>
 
 <p align="center">
-  Set up two test wallets, claim Devnet FLOP, make one safe transfer, and understand what is currently possible for validators and GPU miners.
+  Set up two test accounts, claim Devnet FLOP, make one safe transfer, and understand the validator and GPU-miner paths.
 </p>
 
 ---
 
 ## Before you start
 
+**Status checked: 12 November 2026.** The official operator pages still identify the live network as Devnet. The former 3 November Testnet date was a working target, not a confirmed launch, and the public-Testnet validator profile remains unavailable.
+
 > [!IMPORTANT]
 > **FLOP Devnet is for testing only.** Devnet activity does not provide rewards, airdrop weight, scoring, or guaranteed Testnet priority.
 
 > [!WARNING]
-> There is no official FLOP token, mint, presale, Discord, or Telegram. Never share a recovery phrase, private key, or wallet password. Follow only the links listed in [Official sources](#official-sources).
+> There is no real, tradable, or mainnet FLOP token yet. The FLOP shown in this guide is valueless Devnet test FLOP. There is no live mint, presale, claim, official Discord, or official Telegram. Never share a recovery phrase, private key, or wallet password. Verify FLOP-specific links against [Official sources](#official-sources).
 
 ### What this guide covers
 
 | Part | What you will do | Difficulty |
 |---|---|---|
-| Wallet | Install Talisman, add FLOP Devnet, claim test FLOP, and send `0.1 FLOP` to your own second wallet | Beginner |
+| Wallet | Install Talisman, add FLOP Devnet, claim test FLOP, and send `0.1 FLOP` to your own second account | Beginner |
 | Validator | Learn the current gate and hardware expectations | Information only |
 | Miner | Learn the current gate and GPU expectations | Information only |
 | Testnet | Know what must be published before spending money or deploying equipment | Checklist |
 
-## Quick navigation
+### Quick navigation
 
-- [1. Install Talisman](#1-install-talisman)
-- [2. Create two test accounts](#2-create-two-test-accounts)
-- [3. Add FLOP Devnet](#3-add-flop-devnet)
-- [4. Claim test FLOP](#4-claim-test-flop)
-- [5. Send FLOP to your second wallet](#5-send-flop-to-your-second-wallet)
+- [Install Talisman](#1-install-talisman)
+- [Create two test accounts](#2-create-two-test-accounts)
+- [Add FLOP Devnet](#3-add-flop-devnet)
+- [Claim test FLOP](#4-claim-test-flop)
+- [Send FLOP to your second account](#5-send-flop-to-your-second-account)
 - [Validator path](#validator-path)
 - [Miner path](#miner-path)
 - [Wait for Testnet](#wait-for-testnet)
 
 ---
 
-# Wallet walkthrough
+## Wallet walkthrough
 
-## 1. Install Talisman
+### 1. Install Talisman
 
 Open the official Talisman download page:
 
@@ -57,14 +61,23 @@ Open the official Talisman download page:
 3. Save the recovery phrase offline.
 4. Never paste the recovery phrase into a website, chat, issue, or public repository.
 
-## 2. Create two test accounts
+### 2. Create two test accounts
 
-Create two new **Substrate** accounts in Talisman:
+Create two separate **Substrate accounts inside the same disposable Talisman wallet**. You must control both accounts:
 
 - `FLOP Devnet A`
 - `FLOP Devnet B`
 
-Use disposable accounts that do not contain real assets.
+For each account:
+
+1. Open the Talisman popup and select **More**.
+2. Select **Add Account**.
+3. Select **New Polkadot Account**. FLOP uses Substrate-style addresses.
+4. Enter the account name shown above.
+5. Select **Create**, then **Continue**.
+6. Save and verify the recovery phrase privately if Talisman presents one.
+
+Use disposable accounts that do not contain real assets. Never use an account containing real tokens for this test.
 
 When Talisman asks which address to copy, select **Substrate (Generic)**.
 
@@ -74,7 +87,7 @@ When Talisman asks which address to copy, select **Substrate (Generic)**.
 
 <p align="center"><sub>The example address is intentionally redacted.</sub></p>
 
-## 3. Add FLOP Devnet
+### 3. Add FLOP Devnet
 
 In Talisman:
 
@@ -104,7 +117,7 @@ In Talisman:
 
 Select **Save**.
 
-## 4. Claim test FLOP
+### 4. Claim test FLOP
 
 1. Open `FLOP Devnet A` in Talisman.
 2. Copy its **Substrate (Generic)** address.
@@ -119,10 +132,10 @@ Select **Save**.
 
 A `$0.00` value is expected. Devnet FLOP is a test balance with no monetary value.
 
-## 5. Send FLOP to your second wallet
+### 5. Send FLOP to your second account
 
 > [!CAUTION]
-> Do not use a recipient address copied from a social post or public guide. Send only to `FLOP Devnet B`, the second wallet you created and control.
+> Do not use a recipient address copied from a social post or public guide. Send only to `FLOP Devnet B`, the second account you created and control.
 
 1. Copy the **Substrate (Generic)** address for `FLOP Devnet B`.
 2. Open `FLOP Devnet A`.
@@ -130,13 +143,15 @@ A `$0.00` value is expected. Devnet FLOP is a test balance with no monetary valu
 4. Paste the address for `FLOP Devnet B`.
 5. Enter `0.1 FLOP`.
 6. Confirm the network says `FLOP Devnet`.
-7. Check the first and last six characters of the recipient address.
+7. Compare the first and last six characters with the address copied from B.
 8. Review the estimated fee.
 9. Sign inside Talisman.
 
 <p align="center">
-  <img src="assets/04-transfer-review.png" alt="Reviewing a 0.1 FLOP transfer between two owned wallets" width="520">
+  <img src="assets/04-transfer-review.png" alt="Reviewing a 0.1 FLOP transfer to a second owned account" width="520">
 </p>
+
+The screenshot shows where to verify the shortened recipient address. Its middle is intentionally hidden.
 
 Verify both accounts in the official explorer:
 
@@ -144,7 +159,7 @@ Verify both accounts in the official explorer:
 
 One transfer is enough. You may send `0.05 FLOP` from B back to A as a return test, then stop. Extra transfers do not improve eligibility.
 
-### If Talisman reports `Unknown Transaction Validity`
+#### If Talisman reports `Unknown Transaction Validity`
 
 1. Open the FLOP Devnet network settings.
 2. Turn `CheckMetadataHash` **off**.
@@ -154,15 +169,15 @@ One transfer is enough. You may send `0.05 FLOP` from B back to A as a return te
 
 ---
 
-# Validator path
+## Validator path
 
 FLOP validators participate in block production, finality, and data availability. A validator does not need a GPU.
 
-## Current status
+### Current status
 
-The current Devnet validator process is administrator-assisted. It requires FLOP operations coordination, network enrollment, funding, private peer information, and promotion. Public self-service onboarding is not ready.
+The current Devnet validator process is administrator-assisted. It requires FLOP operations coordination, network enrollment, funding, private peer information, and promotion. Public-Testnet self-service onboarding remains unavailable.
 
-## Planning profile
+### Planning profile
 
 - 8 dedicated CPU cores
 - 32 GB RAM
@@ -170,54 +185,47 @@ The current Devnet validator process is administrator-assisted. It requires FLOP
 - Reliable low-latency 1 Gbps internet
 - Continuous monitoring, backups, and uptime
 
-## Recommended action
+### Recommended action
 
-**Prepare, but do not deploy yet.** Read the current [official validator guide](https://docs.flop.network/docs/run-validator) and wait for public Testnet onboarding. Do not copy development keys, expose unsafe RPC ports, or attempt to bypass admission.
+**Prepare, but do not deploy yet.** Read the current [official validator guide](https://docs.flop.network/docs/run-validator) and wait for published public-Testnet network identity and onboarding. Do not copy development keys, expose unsafe RPC ports, or attempt to bypass admission.
 
 ---
 
-# Miner path
+## Miner path
 
 FLOP miners use NVIDIA GPUs to serve AI inference. The worker also handles registration, calibration, evidence, and sessions.
 
-## Current status
+### Current status
 
-Devnet sponsorship, registration, and calibration may be available when live capacity permits. Paid public mining sessions are not open yet.
+The official miner guide still labels availability as **Devnet development only**, but its public manual pack is available now and no invitation is required. At the status check above, automatic Devnet sponsorship was open. An experienced operator can use the public pack to sponsor, register, run, and calibrate a Devnet miner through public endpoints.
 
-## Documented starting point
+Paid public work and complete outside-gateway admission remain gated. A healthy container, loaded model, registration, or calibration does not by itself prove paid-session acceptance or earnings.
+
+### Documented starting point
 
 - Linux host or full virtual machine
-- NVIDIA GPU with at least 16 GB VRAM
+- NVIDIA GPU with enough VRAM for the exact registered model
 - Docker and NVIDIA Container Toolkit
 - Persistent model storage
 - Public HTTPS hostname or controlled HTTPS tunnel
 
-## Tested hardware note
+### Recommended action
 
-We tested the official backend on an RTX 5060 Ti 16 GB:
-
-- The container detected the GPU.
-- The registered Qwen 0.5B model loaded successfully.
-- The backend verified the measured model identity and decode policy.
-- Model loading used about 12 GB VRAM.
-
-This confirms basic GPU and model-loading compatibility only. It does not prove calibration, admission, settlement, or earnings.
-
-## Recommended action
-
-**Prepare the hardware and wait for Testnet.** Before running anything persistently, confirm that FLOP has published the current miner package, open sponsorship capacity, paid public sessions, and final participation rules.
+**Beginners should stop at the host checks.** Experienced operators can follow the current public Devnet pack to test sponsorship, registration, and calibration now, while keeping all keys and tokens on the host. Before paying for hardware or expecting work, confirm current sponsorship capacity, model requirements, admission gates, paid-session availability, and final participation rules.
 
 Read the [official miner guide](https://docs.flop.network/docs/run-miner) for the latest status.
 
 ---
 
-# Wait for Testnet
+## Wait for Testnet
 
 Devnet earns nothing and does not qualify an account for future rewards.
 
+The official timeline page still shows 3 November 2026 as a **working target**, but that date has passed without the operator pages switching from Devnet to a confirmed public Testnet. Wait for a fresh announcement from `@flop_labs` and published Testnet network identity before participating.
+
 Before spending money or deploying equipment, wait for FLOP to publish:
 
-- A live Testnet announcement
+- A confirmed live Testnet announcement
 - Testnet genesis and network settings
 - Final validator and miner releases
 - Public onboarding rules
@@ -228,8 +236,9 @@ The published draft Testnet design focuses on actual usage and verified computeâ
 
 ---
 
-# Official sources
+## Official sources
 
+- [Talisman wallet download](https://talisman.xyz/download)
 - [FLOP on X](https://x.com/flop_labs)
 - [FLOP documentation](https://docs.flop.network)
 - [FLOP GitHub](https://github.com/flop-labs)
