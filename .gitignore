@@ -1,0 +1,23 @@
+# Local secrets and generated state
+*.env
+*.key
+*.seed
+*.json.keystore
+miner.json
+validator.json
+signer
+session-keys/
+models/
+
+# Test output
+health*.json
+request*.json
+response*.json
+sources-ledger.json
+__pycache__/
+*.pyc
+
+# Editors and OS
+.DS_Store
+.vscode/
+.idea/
